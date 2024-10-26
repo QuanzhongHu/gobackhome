@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2dy2y022024"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_twmiu"]
+[ext_resource type="Texture2D" uid="uid://bellc0k163c6o" path="res://IMG_0632.PNG" id="2_ajidc"]
+[ext_resource type="Texture2D" uid="uid://b45tt6q3fdp4g" path="res://reticle-crosshair-red-icon-free-png-701751694974301y3cnksxiin.png" id="3_q7eq7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t5pyq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_twmiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_ajidc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_t5pyq")
+
+[node name="Crosshair" type="Sprite2D" parent="Player"]
+z_index = 10
+texture = ExtResource("3_q7eq7")
